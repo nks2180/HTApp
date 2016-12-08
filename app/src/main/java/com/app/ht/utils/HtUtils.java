@@ -11,7 +11,8 @@ import java.util.TimeZone;
 
 public class HtUtils {
     //public static String yyyyMMdd = ;
-    public static String yyyyMMddhh = "yyyy-MM-dd HH:mm:ss z";
+    public static String yyyyMMddhhmmZ = "yyyy-MM-dd HH:mm:ssZ";
+    public static String hhmma = "hh:mm a";
 
     public static final int DEFAULT_GROUP_ID = 1000;
     public static final int DEFAULT_CHILD_ID = 10000;

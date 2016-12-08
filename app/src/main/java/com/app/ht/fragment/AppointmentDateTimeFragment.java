@@ -1,12 +1,10 @@
 package com.app.ht.fragment;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +87,6 @@ public class AppointmentDateTimeFragment extends BaseFragment implements Recycle
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
         return rootView;
@@ -120,21 +117,14 @@ public class AppointmentDateTimeFragment extends BaseFragment implements Recycle
 
     @Override
     public void onGroupExpand(int groupPosition, boolean fromUser) {
-        Log.d("onGroupExpand", String.valueOf(fromUser) + " GroupPosition: " + groupPosition);
+        HTLogger.d("onGroupExpand groupPosition: ", String.valueOf(groupPosition));
     }
 
     @Override
     public void onGroupCollapse(int groupPosition, boolean fromUser) {
-        Log.d("onGroupCollapse", String.valueOf(fromUser) + " GroupPosition: " + groupPosition);
+        HTLogger.d("onGroupCollapse groupPosition: ", String.valueOf(groupPosition));
     }
 
-    private void adjustScrollPositionOnGroupExpanded(int groupPosition) {
-//        int childItemHeight = getActivity().getResources().getDimensionPixelSize(R.dimen.list_item_height);
-//        int topMargin = (int) (getActivity().getResources().getDisplayMetrics().density * 16); // top-spacing: 16dp
-//        int bottomMargin = topMargin; // bottom-spacing: 16dp
-//
-//        mRecyclerViewExpandableItemManager.scrollToGroup(groupPosition, childItemHeight, topMargin, bottomMargin);
-    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -144,9 +134,5 @@ public class AppointmentDateTimeFragment extends BaseFragment implements Recycle
                     SAVED_STATE_EXPANDABLE_ITEM_MANAGER,
                     mRecyclerViewExpandableItemManager.getSavedState());
         }
-    }
-
-    private boolean supportsViewElevation() {
-        return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP);
     }
 }

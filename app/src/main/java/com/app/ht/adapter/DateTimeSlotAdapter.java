@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 import com.app.ht.R;
 import com.app.ht.model.AppointmentDateSlot;
 import com.app.ht.model.TimingSlot;
-import com.app.ht.utils.HTLogger;
 import com.app.ht.utils.HtUtils;
 import com.app.ht.viewHolders.DateHeaderViewHolder;
 import com.app.ht.viewHolders.TimeSlotRowHolder;
-import com.h6ah4i.android.widget.advrecyclerview.expandable.ExpandableItemConstants;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractExpandableItemAdapter;
 
 import java.util.Date;
@@ -22,9 +20,8 @@ import java.util.List;
  */
 
 public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeaderViewHolder, TimeSlotRowHolder> {
-    private static int GROUP_COUNT = 3;
 
-    private static final String TAG = "DateTimeItemAdapter";
+    private static int GROUP_COUNT = 3;
     AppointmentDateSlot mDateTimeSlot;
 
     public DateTimeSlotAdapter(AppointmentDateSlot dateTimeSlot) {
@@ -104,7 +101,6 @@ public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeade
             @Override
             public void onClick(View v) {
                 holder.imgVw_chevron.animate().rotationBy(180);
-                HTLogger.d("itemView", "" + holder.getExpandStateFlags());
             }
         });
         holder.txtVw_slotCount.setText(slotCount + (slotCount > 1 ? " Slots Available" : " Slot Available"));
@@ -127,9 +123,9 @@ public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeade
                     break;
             }
             TimingSlot timeSlot = timingSlots.get(childPosition);
-            Date startDate = HtUtils.parseDateString("yyyy-MM-dd HH:mm:ssZ", timeSlot.getStartTime());
-            Date endDate = HtUtils.parseDateString("yyyy-MM-dd HH:mm:ssZ", timeSlot.getEndTime());
-            holder.txtVw_slotTime.setText(HtUtils.formatDate("hh:mm a", startDate) + " - " + HtUtils.formatDate("hh:mm a", endDate));
+            Date startDate = HtUtils.parseDateString(HtUtils.yyyyMMddhhmmZ, timeSlot.getStartTime());
+            Date endDate = HtUtils.parseDateString(HtUtils.yyyyMMddhhmmZ, timeSlot.getEndTime());
+            holder.txtVw_slotTime.setText(HtUtils.formatDate(HtUtils.hhmma, startDate) + " - " + HtUtils.formatDate(HtUtils.hhmma, endDate));
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -139,47 +135,6 @@ public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeade
     @Override
     public boolean onCheckCanExpandOrCollapseGroup(DateHeaderViewHolder holder, int groupPosition, int x, int y, boolean expand) {
         return true;
-//        switch (groupPosition) {
-//            case 0:
-//                return (mDateTimeSlot.getMorning().size() > 0);
-//            case 1:
-//                return (mDateTimeSlot.getAfternoon().size() > 0);
-//            case 2:
-//                return (mDateTimeSlot.getEvening().size() > 0);
-//            default:
-//                return false;
-//        }
     }
 
-//
-//    public static abstract class MyBaseViewHolder extends AbstractExpandableItemViewHolder {
-//
-//        public MyBaseViewHolder(View v) {
-//            super(v);
-//
-//        }
-//    }
-
-//    public static class MyGroupViewHolder extends MyBaseViewHolder {
-//        public ImageView imgVw_chevron;
-//        public HFTextView txtVw_slotHeader, txtVw_slotCount;
-//
-//        public MyGroupViewHolder(View v) {
-//            super(v);
-//            imgVw_chevron = (ImageView) v.findViewById(R.id.imgVw_chevron);
-//            txtVw_slotHeader = (HFTextView) v.findViewById(R.id.txtVw_slotHeader);
-//            txtVw_slotCount = (HFTextView) v.findViewById(R.id.txtVw_slotCount);
-//        }
-//    }
-//
-//    public static class MyChildViewHolder extends MyBaseViewHolder {
-//        HFTextView txtVw_slotTime;
-//        public MyChildViewHolder(View v) {
-//            super(v);
-//            txtVw_slotTime = (HFTextView) v.findViewById(R.id.txtVw_slotTime);
-//        }
-//    }
-
-    private interface Expandable extends ExpandableItemConstants {
-    }
 }
