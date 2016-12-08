@@ -9,4 +9,5 @@
 
     <color name="divider">#eeeeee</color>
     <color name="bg_slot_header">#FAFAFA</color>
+    <color name="bg_slot_disabled">#ccc</color>
 </resources>

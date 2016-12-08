@@ -1,5 +1,7 @@
 package com.app.ht.adapter;
 
+import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +25,11 @@ public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeade
 
     private static int GROUP_COUNT = 3;
     AppointmentDateSlot mDateTimeSlot;
+    Context mContext;
 
-    public DateTimeSlotAdapter(AppointmentDateSlot dateTimeSlot) {
+    public DateTimeSlotAdapter(AppointmentDateSlot dateTimeSlot, Context context) {
         this.mDateTimeSlot = dateTimeSlot;
+        this.mContext = context;
         setHasStableIds(true);
     }
 
@@ -126,6 +130,12 @@ public class DateTimeSlotAdapter extends AbstractExpandableItemAdapter<DateHeade
             Date startDate = HtUtils.parseDateString(HtUtils.yyyyMMddhhmmZ, timeSlot.getStartTime());
             Date endDate = HtUtils.parseDateString(HtUtils.yyyyMMddhhmmZ, timeSlot.getEndTime());
             holder.txtVw_slotTime.setText(HtUtils.formatDate(HtUtils.hhmma, startDate) + " - " + HtUtils.formatDate(HtUtils.hhmma, endDate));
+            if (timeSlot.isIsExpired() || timeSlot.isIsBooked()){
+                holder.lnrLyt_slotTime.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_slot_disabled));
+            }
+            else{
+                holder.lnrLyt_slotTime.setBackgroundColor(ContextCompat.getColor(mContext, R.color.white));
+            }
         }
         catch (Exception ex){
             ex.printStackTrace();

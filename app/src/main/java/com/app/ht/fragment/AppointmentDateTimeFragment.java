@@ -101,7 +101,7 @@ public class AppointmentDateTimeFragment extends BaseFragment implements Recycle
         mRecyclerViewExpandableItemManager.setOnGroupExpandListener(this);
         mRecyclerViewExpandableItemManager.setOnGroupCollapseListener(this);
 
-        final DateTimeSlotAdapter myItemAdapter = new DateTimeSlotAdapter(mDateSlot);
+        final DateTimeSlotAdapter myItemAdapter = new DateTimeSlotAdapter(mDateSlot, getActivity());
         mWrappedAdapter = mRecyclerViewExpandableItemManager.createWrappedAdapter(myItemAdapter);
 
         GeneralItemAnimator animator = new RefactoredDefaultItemAnimator();
