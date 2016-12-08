@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+    android:orientation="vertical"
+              android:background="@color/white"
+              tools:ignore="RtlHardcoded">
+
+    <com.app.ht.customViews.HFTextView
+        android:id="@+id/txtVw_slotTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Morning"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_twelve"
+        android:textSize="@dimen/font_fourteen"
+        android:textColor="@color/black"
+        android:padding="@dimen/margin_sixteen"
+        android:layout_toRightOf="@id/imgVw_slotHeader"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_below="@id/imgVw_slotHeader"/>
+
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_sixteen"
+                android:background="@color/bg_slot_header"
+                tools:ignore="RtlHardcoded">
+
+    <ImageView
+        android:id="@+id/imgVw_chevron"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_red_reveallist"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin_twelve"
+        android:layout_alignParentRight="true"/>
+
+    <com.app.ht.customViews.HFTextView
+        android:id="@+id/txtVw_slotCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="5 Slots Available"
+        android:layout_centerVertical="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/font_fourteen"
+        android:layout_marginRight="@dimen/margin_twelve"
+        android:layout_toLeftOf="@id/imgVw_chevron"/>
+
+    <ImageView
+        android:id="@+id/imgVw_slotHeader"
+        android:layout_width="@dimen/margin_thirtySix"
+        android:layout_height="@dimen/margin_thirtySix"
+        android:src="@drawable/ic_morningsnack"
+        android:padding="@dimen/margin_eight"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_twelve"
+        android:background="@drawable/ic_round_slot"
+        android:layout_alignParentLeft="true"/>
+
+    <com.app.ht.customViews.HFTextView
+        android:id="@+id/txtVw_slotHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Morning"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/margin_twelve"
+        android:textSize="@dimen/font_eighteen"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@id/imgVw_slotHeader"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginTop="@dimen/margin_sixteen"
+        android:layout_below="@id/imgVw_slotHeader"/>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/niranjan/Desktop/MVPExample-master/MaterialApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/res/layout-v21/notification_action.xml"
+    }
+]
