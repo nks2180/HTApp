@@ -2,7 +2,7 @@ package com.app.ht.module;
 
 import android.content.Context;
 
-import com.app.ht.MaterialApplication;
+import com.app.ht.HTApplication;
 import com.app.ht.executor.ParsingExecutor;
 
 import javax.inject.Singleton;
@@ -16,9 +16,9 @@ import dagger.Provides;
 @Module
 public class ApplicationModule {
 
-    private final MaterialApplication lybrate;
+    private final HTApplication lybrate;
 
-    public ApplicationModule(MaterialApplication lybrate) {
+    public ApplicationModule(HTApplication lybrate) {
         this.lybrate = lybrate;
     }
 

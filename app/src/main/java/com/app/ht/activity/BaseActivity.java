@@ -3,7 +3,7 @@ package com.app.ht.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.app.ht.MaterialApplication;
+import com.app.ht.HTApplication;
 import com.app.ht.component.ApplicationComponent;
 
 import butterknife.ButterKnife;
@@ -21,7 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getMainLayout());
         ButterKnife.bind(this);
 
-        injectComponent(((MaterialApplication)getApplicationContext()).getComponent());
+        injectComponent(((HTApplication)getApplicationContext()).getComponent());
         initializePresenter();
     }
 

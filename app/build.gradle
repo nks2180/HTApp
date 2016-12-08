@@ -11,7 +11,6 @@ buildscript {
 
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
-apply plugin: 'realm-android'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -39,7 +38,6 @@ android {
 }
 
 apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'org.greenrobot.greendao'
 
 
 dependencies {
@@ -48,7 +46,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    compile 'org.greenrobot:greendao:3.2.0'
 
     compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.2@aar'){
         transitive=true

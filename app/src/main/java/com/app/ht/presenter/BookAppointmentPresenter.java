@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.app.ht.executor.ParsingExecutor;
 import com.app.ht.model.AppointmentDateSlot;
-import com.app.ht.model.TaskResponse;
 import com.app.ht.retrofit.ApiController;
 import com.app.ht.retrofit.ApiDataReceiveCallback;
 import com.app.ht.retrofit.NetworkConstants;
@@ -77,19 +76,6 @@ public class BookAppointmentPresenter extends BasePresenterImpl<BookAppointmentV
             e.printStackTrace();
         }
         return dateTimeSlots;
-    }
-
-    private void parseResponseUsingExecutor(String response) {
-        parsingExecutor.execute(TaskResponse.class, response, new ParsingExecutor.ParsingCallback<TaskResponse>() {
-            @Override
-            public void onParsingCompleted(TaskResponse result) {
-                try {
-
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            }
-        });
     }
 
     @Override

@@ -24,7 +24,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.ht.MaterialApplication;
+import com.app.ht.HTApplication;
 import com.app.ht.component.ApplicationComponent;
 
 import butterknife.ButterKnife;
@@ -46,7 +46,7 @@ public abstract class BaseFragment extends Fragment {
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    injectComponent(((MaterialApplication)getActivity().getApplication()).getComponent());
+    injectComponent(((HTApplication)getActivity().getApplication()).getComponent());
     initializePresenter();
 
   }
