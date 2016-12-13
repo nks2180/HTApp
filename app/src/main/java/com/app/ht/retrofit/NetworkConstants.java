@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 public class NetworkConstants {
 
-    public static final int API_FETCH_TASKS_FROM_SERVER = 1001;
     public static final int API_FETCH_APPOINTMENT_SLOTS = 1000;
 
     public static HashMap<String, String> getSlotDefaultParams(){

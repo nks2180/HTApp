@@ -27,8 +27,6 @@ public class ApiController<T> {
 
     private Call<String> getApiFromApiType(int apiType, Map<String, String> extraParams) {
         switch (apiType) {
-            case NetworkConstants.API_FETCH_TASKS_FROM_SERVER:
-                return apiService.fetchAllTasks();
             case NetworkConstants.API_FETCH_APPOINTMENT_SLOTS:
                 return apiService.fetchAppointmentSlots(extraParams);
         }
